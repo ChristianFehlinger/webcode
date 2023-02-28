@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: source .build; docker-compose build
+      run: |
+        source .build 
+        UID=0 GID=0 docker-compose build
