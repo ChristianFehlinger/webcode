@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: |
         source .build 
-        UID=0 GID=0 docker-compose build
+        docker build . --file Dockerfile --tag christianfehlinger/code:$VERSION --build-arg BASE_TAG=linuxserver/code-server:${CODE_SERVER_ARCHITECTURE}-${CODE_SERVER_VERSION}
