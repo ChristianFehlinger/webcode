@@ -10,7 +10,7 @@ services:
         BASE_TAG: linuxserver/code-server:${CODE_SERVER_ARCHITECTURE}-${CODE_SERVER_VERSION}
         CODE_SERVER_VERSION: ${CODE_SERVER_VERSION:?err}
         CODE_SERVER_ARCHITECTURE: ${CODE_SERVER_ARCHITECTURE:?err}
-    image: test:${VERSION:?err}
+    image: christianfehlinger/code:${VERSION:?err}
     logging:
       driver: "json-file"
       options:
@@ -29,3 +29,11 @@ services:
       - ${CODE_CONFIG_PATH:?err}:/config
     ports:
       - 8888:8443
+#    labels:
+#      - traefik.enable=true
+#      - traefik.http.routers.webcode.rule=Host(`friday.fritz.box`) && PathPrefix(`/webcode`)
+#      - traefik.http.routers.webcode.entrypoints=web
+#      - traefik.http.services.webcode.loadbalancer.server.port=8443
+#      - traefik.http.routers.webcode.tls=false
+#      - traefik.http.routers.webcode.middlewares=webcode-stripprefix
+#      - traefik.http.middlewares.webcode-stripprefix.stripprefix.prefixes=/webcode

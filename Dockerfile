@@ -1,6 +1,4 @@
-ARG CODE_SERVER_VERSION
-ARG CODE_SERVER_ARCHITECTURE
-ARG BASE_TAG=linuxserver/code-server:arm64v8-4.7.1
+ARG BASE_TAG=linuxserver/code-server:arm64v8-4.10.0
 
 FROM $BASE_TAG
 
@@ -10,6 +8,7 @@ ARG CODE_SERVER_ARCHITECTURE
 LABEL maintainer="Christian Fehlinger" \
       linux="ubuntu" \
       repository="https://github.com/ChristianFehlinger/webcode" \
+      registry="https://hub.docker.com/repository/docker/christianfehlinger/code" \
       application="code-server" \
       application_version=${CODE_SERVER_VERSION} \
       application_arch=${CODE_SERVER_ARCHITECTURE}
