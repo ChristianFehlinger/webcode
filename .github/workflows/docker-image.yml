@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: |
         source .build 
-        docker build . --file Dockerfile --tag christianfehlinger/code:$VERSION --build-arg BASE_TAG=linuxserver/code-server:${CODE_SERVER_ARCHITECTURE}-${CODE_SERVER_VERSION}
+        docker build . --file Dockerfile --tag christianfehlinger/code:$VERSION --build-arg BASE_TAG=linuxserver/code-server:${CODE_SERVER_ARCHITECTURE}-${CODE_SERVER_VERSION}  --build-arg CODE_SERVER_VERSION=$CODE_SERVER_VERSION  --build-arg CODE_SERVER_ARCHITECTURE=$CODE_SERVER_ARCHITECTURE
