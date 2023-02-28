@@ -4,8 +4,19 @@ I am using it to mount my configuration-folder of the [home-assistant](https://w
   
 # Environment file
 
-To build the image you have to create a file `.env` in the root folder.  
+To run the image you have to create a file `.env` in the root folder.  
 Should look like the following example: 
+
+```bash
+UID=1000
+GID=124
+# Path to store the config
+CODE_CONFIG_PATH=/<PATH>/config
+# Path to you workspace e.g. homeassistant config
+CODE_WORKSPACE_PATH=/<PATH>/homeassistant
+```
+  
+For building the image there is a file `.build`.  
 
 ```bash
 # used for imagetag
@@ -14,13 +25,8 @@ VERSION=v0.1
 CODE_SERVER_VERSION=4.7.1
 # set the architecture
 CODE_SERVER_ARCHITECTURE=arm64v8
-UID=1000
-GID=124
-# Path to store the config
-CODE_CONFIG_PATH=/<PATH>/config
-# Path to you workspace e.g. homeassistant config
-CODE_WORKSPACE_PATH=/<PATH>/homeassistant
 ```
+
 
 # Build / Run
 Build: `docker-compose build`  

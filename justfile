@@ -1,3 +1,5 @@
+set shell := ["bash", "-c"]
+
 # default recipe to display
 @default:
   just --list
@@ -21,6 +23,7 @@
 
 # build docker image
 @build:
+  source .build
   docker-compose build
 
 # Clean docker

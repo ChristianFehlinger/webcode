@@ -1,6 +1,5 @@
 
-version: '3.4'
-
+version: '3'
 services:
   webcode:
     container_name: webcode
@@ -29,6 +28,7 @@ services:
       - ${CODE_CONFIG_PATH:?err}:/config
     ports:
       - 8888:8443
+
 #    labels:
 #      - traefik.enable=true
 #      - traefik.http.routers.webcode.rule=Host(`friday.fritz.box`) && PathPrefix(`/webcode`)
